@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hành trình xây dựng Tết Pro Software — Phần mềm và chuyển đổi số</title>
+<meta name="description" content="Câu chuyện về cách Tết Pro Software xây dựng hệ sinh thái phần mềm và chuyển đổi số: triết lý sản phẩm, quy trình làm việc, khung hành trình và các website trong hệ sinh thái.">
+<link rel="canonical" href="https://www.tetprosoftware.xyz/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tết Pro Software">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Hành trình xây dựng Tết Pro Software">
+<meta property="og:description" content="Triết lý, quy trình và hệ sinh thái công nghệ của Tết Pro Software — kể một cách minh bạch, không thêm thắt.">
+<meta property="og:url" content="https://www.tetprosoftware.xyz/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hành trình xây dựng Tết Pro Software">
+<meta name="twitter:description" content="Triết lý, quy trình và hệ sinh thái công nghệ của Tết Pro Software.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.tetprosoftware.xyz/#organization",
+      "name": "Tết Pro Software",
+      "legalName": "Công ty Cổ phần Phần mềm Tết Pro",
+      "url": "https://www.tetprosoftware.xyz/",
+      "email": "lien-he@tetprosoftware.com",
+      "description": "Doanh nghiệp định hướng phần mềm và chuyển đổi số.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30 Phan Đình Phùng",
+        "addressLocality": "Ba Đình",
+        "addressRegion": "Hà Nội",
+        "addressCountry": "VN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/tetprosoftware",
+        "https://www.instagram.com/tetprosoftware",
+        "https://www.threads.com/@tetprosoftware",
+        "https://www.tiktok.com/@tetprosoftware",
+        "https://www.youtube.com/@tetprosoftware",
+        "https://github.com/tetprosoftware",
+        "https://www.pinterest.com/tetprosoftware",
+        "https://www.linkedin.com/company/tetprosoftware"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tetprosoftware.xyz/#website",
+      "url": "https://www.tetprosoftware.xyz/",
+      "name": "Tết Pro Software — Hành trình",
+      "inLanguage": "vi-VN",
+      "publisher": { "@id": "https://www.tetprosoftware.xyz/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.tetprosoftware.xyz/#webpage",
+      "url": "https://www.tetprosoftware.xyz/",
+      "name": "Hành trình xây dựng Tết Pro Software",
+      "description": "Câu chuyện về cách Tết Pro Software xây dựng hệ sinh thái phần mềm và chuyển đổi số.",
+      "inLanguage": "vi-VN",
+      "isPartOf": { "@id": "https://www.tetprosoftware.xyz/#website" },
+      "about": { "@id": "https://www.tetprosoftware.xyz/#organization" }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#f6f1e7; --bg2:#efe8d9; --surface:#fffdf8; --ink:#1c1a16; --muted:#5d584d; --line:#d9cfba;
+  --accent:#b3261e; --accent-ink:#ffffff; --gold:#a8791d; --tech:#1f5f5b;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --radius:16px; --maxw:1180px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#121110; --bg2:#1a1816; --surface:#1d1b18; --ink:#efe9dd; --muted:#a8a193; --line:#37332c;
+    --accent:#ff6b57; --accent-ink:#1a0a07; --gold:#e0b252; --tech:#6fc9c0;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:1.05rem;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;z-index:100;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* Header */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;height:64px}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+.brand i{width:12px;height:12px;background:var(--accent);display:inline-block;transform:rotate(45deg)}
+.nav{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:.88rem;text-decoration:none;color:var(--muted);padding:.4rem .75rem;border-radius:999px;white-space:nowrap}
+.nav a:hover,.nav a.on{color:var(--ink);background:var(--bg2)}
+
+/* Typography */
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0 0 .6em;letter-spacing:-.01em}
+h1{font-size:clamp(2.7rem,7.4vw,6.2rem);font-weight:700;letter-spacing:-.03em}
+h1 em{font-style:italic;color:var(--accent)}
+h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+h3{font-size:1.35rem}
+p{margin:0 0 1em}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 1rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.lede{font-size:clamp(1.12rem,2vw,1.4rem);color:var(--muted);max-width:44rem}
+.note{font-size:.9rem;color:var(--muted)}
+
+/* Hero */
+.hero{padding:clamp(3rem,8vw,7rem) 0 clamp(2.5rem,6vw,5rem);position:relative;border-bottom:1px solid var(--line);
+  background:
+   linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 64px,
+   linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/64px 100%;
+  background-color:var(--bg);
+  background-blend-mode:normal;
+}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 82%,transparent),var(--bg));pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:3rem;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0;padding:0;list-style:none}
+.chips li{font-size:.82rem;border:1px solid var(--line);background:var(--surface);padding:.35rem .8rem;border-radius:999px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--ink);font-size:.95rem;transition:transform .2s,background .2s}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.transparency{margin-top:2rem;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--surface);font-size:.92rem;color:var(--muted);border-radius:0 12px 12px 0;max-width:40rem}
+
+/* Sections */
+.sec{padding:clamp(3.5rem,8vw,7rem) 0;border-bottom:1px solid var(--line)}
+.sec.alt{background:var(--bg2)}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2.5rem;align-items:end;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.num{font-family:var(--serif);font-size:clamp(4rem,10vw,8rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--gold);font-weight:700}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split.rev>:first-child{order:2}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+.fig figcaption{font-size:.8rem;color:var(--muted);padding:.6rem .4rem 0;font-family:var(--mono)}
+.sv-line{stroke:var(--line);fill:none;stroke-width:1.5}
+.sv-ink{stroke:var(--ink);fill:none;stroke-width:1.5}
+.sv-fill{fill:var(--surface);stroke:var(--ink);stroke-width:1.5}
+.sv-acc{fill:var(--accent);stroke:var(--accent)}
+.sv-gold{fill:none;stroke:var(--gold);stroke-width:2}
+.sv-tech{fill:color-mix(in srgb,var(--tech) 18%,var(--surface));stroke:var(--tech);stroke-width:1.5}
+.sv-t{font-family:var(--mono);font-size:12px;fill:var(--ink)}
+.sv-tm{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.sv-ta{font-family:var(--mono);font-size:12px;fill:var(--accent-ink);font-weight:700}
+
+/* Principles */
+.principles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.principles li{background:var(--surface);padding:1.8rem 1.6rem;position:relative}
+.principles b{display:block;font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.8rem}
+.principles h3{font-size:1.25rem;margin-bottom:.5rem}
+.principles p{color:var(--muted);font-size:.98rem;margin:0}
+
+/* Timeline */
+.banner{display:flex;gap:.8rem;align-items:flex-start;border:1px dashed var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--surface));padding:1rem 1.2rem;border-radius:12px;margin-bottom:2.5rem;font-size:.95rem}
+.banner strong{color:var(--accent)}
+.timeline{list-style:none;margin:0;padding:0 0 0 2.4rem;position:relative}
+.timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(var(--gold) 0 8px,transparent 8px 14px)}
+.phase{position:relative;margin-bottom:1.6rem}
+.phase::before{content:attr(data-n);position:absolute;left:calc(-2.4rem);top:1.3rem;width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--mono);font-size:.8rem;font-weight:700}
+.phase[data-verified="true"]::before{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.phase-card{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:1.6rem;display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem 2.5rem}
+.phase[data-verified="true"] .phase-card{border-style:solid}
+.badge{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:.8rem}
+.phase[data-verified="true"] .badge{border-color:var(--accent);color:var(--accent)}
+.phase h3{margin-bottom:.4rem}
+.phase .sum{color:var(--muted);margin:0}
+.phase h4{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 .5rem}
+.phase ul{margin:0 0 1rem;padding-left:1.1rem;font-size:.95rem}
+.phase ul li{margin-bottom:.25rem}
+.events{grid-column:1/-1;list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+.events:empty{display:none}
+.events li{border-top:1px solid var(--line);padding-top:.8rem}
+.events time{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
+.events strong{display:block;font-family:var(--serif);font-size:1.15rem}
+.events p{margin:.2rem 0 0;color:var(--muted);font-size:.95rem}
+
+/* Process */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.5rem}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;border-top:4px solid var(--accent)}
+.step:nth-child(2){border-top-color:var(--gold)}
+.step:nth-child(3){border-top-color:var(--tech)}
+.step:nth-child(4){border-top-color:var(--ink)}
+.step h3{font-size:1.2rem}
+.step p{font-size:.95rem;color:var(--muted)}
+.gate{font-size:.85rem;border-top:1px dashed var(--line);padding-top:.8rem;margin:0}
+.gate b{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);display:block}
+
+/* Lessons */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.col{padding:1.8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.col h3{display:flex;gap:.6rem;align-items:center}
+.col ul{padding-left:1.1rem;margin:0}
+.col li{margin-bottom:.7rem;color:var(--muted);font-size:.98rem}
+.col li strong{color:var(--ink)}
+
+/* Ecosystem */
+.eco{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.card{display:flex;flex-direction:column;height:100%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 30px -18px color-mix(in srgb,var(--ink) 50%,transparent)}
+.card .tld{font-family:var(--serif);font-size:1.9rem;font-weight:700;line-height:1;margin-bottom:.4rem}
+.card .tld span{color:var(--accent)}
+.card h3{font-size:1.02rem;font-family:var(--sans);font-weight:700;margin-bottom:.4rem;line-height:1.3}
+.card p{font-size:.88rem;color:var(--muted);margin:0 0 1rem;flex:1;line-height:1.55}
+.card .go{font-family:var(--mono);font-size:.75rem;color:var(--ink);word-break:break-all}
+.card[aria-current="page"]{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--surface))}
+.card .here{position:absolute;top:.8rem;right:.8rem;font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.06em;background:var(--accent);color:var(--accent-ink);padding:.15rem .5rem;border-radius:999px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.dl{margin:0;display:grid;gap:1.1rem}
+.dl dt{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.dl dd{margin:.1rem 0 0;font-size:1.08rem}
+.dl a{text-decoration-color:var(--accent);text-underline-offset:4px}
+address{font-style:normal}
+.social{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.social a{display:flex;justify-content:space-between;align-items:center;text-decoration:none;border:1px solid var(--line);background:var(--surface);padding:.8rem 1rem;border-radius:12px;font-weight:600;font-size:.95rem;transition:border-color .2s}
+.social a:hover{border-color:var(--accent)}
+.social a span{font-family:var(--mono);font-weight:400;font-size:.72rem;color:var(--muted)}
+
+/* Owner guide */
+details.guide{margin-top:3rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:1.2rem 1.5rem}
+details.guide summary{cursor:pointer;font-weight:700}
+details.guide pre{overflow:auto;background:var(--bg2);padding:1rem;border-radius:10px;font-family:var(--mono);font-size:.8rem;line-height:1.55}
+details.guide code{font-family:var(--mono);font-size:.88em;background:var(--bg2);padding:.1em .35em;border-radius:5px}
+
+footer{padding:2.5rem 0 3rem;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
+
+/* Reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1080px){
+  .eco{grid-template-columns:repeat(3,1fr)}
+  .pipe{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .hero .wrap,.split,.contact,.phase-card{grid-template-columns:1fr}
+  .split.rev>:first-child{order:0}
+  .principles,.cols3{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr;gap:.5rem}
+  .num{font-size:4.5rem}
+  .eco{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  body{font-size:1rem}
+  .wrap{width:min(100% - 1.5rem,var(--maxw))}
+  .eco,.pipe,.social{grid-template-columns:1fr}
+  .timeline{padding-left:2.2rem}
+  .phase-card{padding:1.2rem}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+@media print{.top{position:static}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua tới nội dung chính</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Tết Pro Software — đầu trang"><i aria-hidden="true"></i><span>Tết Pro Software</span></a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#vi-sao">Vì sao</a>
+      <a href="#triet-ly">Triết lý</a>
+      <a href="#hanh-trinh">Hành trình</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#bai-hoc">Bài học</a>
+      <a href="#he-sinh-thai">Hệ sinh thái</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="h-hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Phần mềm · Chuyển đổi số</p>
+      <h1 id="h-hero">Hành trình xây dựng <em>Tết Pro Software</em></h1>
+      <p class="lede">Một câu chuyện kể bằng cách làm việc thay vì khẩu hiệu: vì sao chúng tôi chọn xây dựng một hệ sinh thái công nghệ, sản phẩm được nghiên cứu và hoàn thiện như thế nào, và những nguyên tắc nào định hướng bước tiếp theo.</p>
+      <ul class="chips" aria-label="Thông tin nhanh">
+        <li>Công ty Cổ phần Phần mềm Tết Pro</li>
+        <li>Hà Nội, Việt Nam</li>
+        <li>10 website trong hệ sinh thái</li>
+      </ul>
+      <div class="cta">
+        <a class="btn pri" href="#hanh-trinh">Xem khung hành trình →</a>
+        <a class="btn" href="#he-sinh-thai">Khám phá hệ sinh thái</a>
+      </div>
+      <p class="transparency"><strong>Cam kết minh bạch:</strong> trang này không tự đặt năm thành lập, mốc lịch sử, khách hàng hay thành tích. Phần chưa có dữ liệu thực tế được đánh dấu rõ là khung dự kiến.</p>
+    </div>
+
+    <figure class="fig rv" style="margin:0">
+      <svg viewBox="0 0 420 380" role="img" aria-labelledby="hero-svg-t hero-svg-d">
+        <title id="hero-svg-t">Minh họa kiến trúc phân lớp</title>
+        <desc id="hero-svg-d">Bốn lớp xếp chồng: dữ liệu và hạ tầng, nền tảng, sản phẩm và dịch vụ, trải nghiệm người dùng.</desc>
+        <g class="sv-line"><path d="M20 340H400M20 300H400M20 260H400M20 220H400M20 180H400M20 140H400M20 100H400M20 60H400"/></g>
+        <g transform="translate(0,0)">
+          <path class="sv-fill" d="M70 290 L210 340 L350 290 L210 240 Z"/>
+          <text class="sv-t" x="210" y="296" text-anchor="middle">Dữ liệu &amp; hạ tầng</text>
+          <path class="sv-tech" d="M70 240 L210 290 L350 240 L210 190 Z"/>
+          <text class="sv-t" x="210" y="246" text-anchor="middle">Nền tảng &amp; tích hợp</text>
+          <path class="sv-fill" d="M70 190 L210 240 L350 190 L210 140 Z"/>
+          <text class="sv-t" x="210" y="196" text-anchor="middle">Sản phẩm &amp; dịch vụ</text>
+          <path class="sv-acc" d="M70 140 L210 190 L350 140 L210 90 Z"/>
+          <text class="sv-ta" x="210" y="146" text-anchor="middle">Trải nghiệm người dùng</text>
+        </g>
+        <path class="sv-gold" d="M210 90V40" stroke-dasharray="5 5"/>
+        <circle cx="210" cy="34" r="6" class="sv-acc"/>
+        <text class="sv-tm" x="210" y="20" text-anchor="middle">Vấn đề thật của người dùng</text>
+      </svg>
+      <figcaption>Hình minh họa khái niệm — không phải sơ đồ hệ thống thực tế.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 01 VÌ SAO -->
+<section class="sec" id="vi-sao" aria-labelledby="h-vi-sao">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">01</span>
+      <div>
+        <p class="kicker">Lý do</p>
+        <h2 id="h-vi-sao">Vì sao xây dựng một hệ sinh thái công nghệ</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div class="rv">
+        <p>Chuyển đổi số hiếm khi chỉ là một phần mềm đơn lẻ. Người dùng cần nơi để hiểu giải pháp, nơi để thử, nơi để nhận hỗ trợ, và nơi để đọc tài liệu khi muốn đi sâu. Mỗi nhu cầu đó là một “bề mặt” khác nhau của cùng một sản phẩm.</p>
+        <p>Vì vậy Tết Pro Software tổ chức các website theo vai trò rõ ràng thay vì gom tất cả vào một trang. Cách làm này giúp mỗi nơi chỉ phục vụ một mục đích, dễ bảo trì và dễ giải thích với người dùng.</p>
+        <p>Trang <strong>tetprosoftware.xyz</strong> giữ vai trò kể lại hành trình: sản phẩm được nghĩ ra, thử nghiệm và hoàn thiện như thế nào, để người xem hiểu cách đội ngũ làm việc trước khi đặt niềm tin vào sản phẩm.</p>
+        <p class="note">Đây là mô tả về định hướng và cấu trúc, không phải tuyên bố về quy mô hay thành tích.</p>
+      </div>
+      <figure class="fig rv" style="margin:0">
+        <div id="hub" aria-hidden="true"></div>
+        <figcaption>Sơ đồ khái niệm: mười website, mười vai trò, một thương hiệu.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 02 TRIẾT LÝ -->
+<section class="sec alt" id="triet-ly" aria-labelledby="h-triet-ly">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">02</span>
+      <div>
+        <p class="kicker">Cách nghĩ</p>
+        <h2 id="h-triet-ly">Triết lý phát triển sản phẩm</h2>
+      </div>
+    </div>
+    <ol class="principles rv">
+      <li><b>01</b><h3>Bắt đầu từ vấn đề</h3><p>Tính năng chỉ có ý nghĩa khi giải quyết một việc cụ thể của người dùng. Câu hỏi đầu tiên luôn là “vấn đề này có thật không?”.</p></li>
+      <li><b>02</b><h3>Đơn giản trước, đầy đủ sau</h3><p>Phát hành phiên bản nhỏ nhưng dùng được, rồi mở rộng theo phản hồi thay vì xây thật nhiều rồi mới kiểm chứng.</p></li>
+      <li><b>03</b><h3>Minh bạch về giới hạn</h3><p>Nói rõ sản phẩm làm được gì và chưa làm được gì. Niềm tin bền hơn khi kỳ vọng được đặt đúng chỗ.</p></li>
+      <li><b>04</b><h3>Chất lượng là một phần của tiến độ</h3><p>Kiểm thử, bảo mật cơ bản và tài liệu được tính vào công việc, không để dành cho “sau này”.</p></li>
+      <li><b>05</b><h3>Dữ liệu thuộc về người dùng</h3><p>Chỉ thu thập điều cần thiết, giải thích lý do, và thiết kế để người dùng kiểm soát được thông tin của mình.</p></li>
+      <li><b>06</b><h3>Học và ghi lại</h3><p>Mỗi quyết định kỹ thuật quan trọng nên có lý do được ghi lại, để đội ngũ và người đến sau hiểu vì sao.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 03 TIMELINE -->
+<section class="sec" id="hanh-trinh" aria-labelledby="h-hanh-trinh">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">03</span>
+      <div>
+        <p class="kicker">Timeline theo giai đoạn</p>
+        <h2 id="h-hanh-trinh">Khung hành trình</h2>
+      </div>
+    </div>
+
+    <div class="banner rv" id="tl-banner" role="note">
+      <span aria-hidden="true">⚠</span>
+      <div><strong>Khung hành trình dự kiến — cần bổ sung dữ liệu thực tế.</strong> Các giai đoạn dưới đây là cấu trúc chung của quá trình xây dựng sản phẩm phần mềm, chưa gắn với ngày tháng hay sự kiện cụ thể nào của Tết Pro Software. Khi có dữ liệu thật, hãy thêm vào khối JSON <code>timeline-data</code> ở cuối trang (xem “Hướng dẫn cho chủ website”).</div>
+    </div>
+
+    <ol class="timeline" id="timeline">
+      <li class="phase rv" data-n="1" data-phase="y-tuong" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Ý tưởng &amp; xác định vấn đề</h3>
+            <p class="sum">Giai đoạn đặt câu hỏi: ai gặp khó khăn, khó khăn đó là gì, và liệu phần mềm có phải cách giải quyết phù hợp.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Vấn đề này đáng giải quyết vì sao?</li><li>Người dùng mục tiêu là ai?</li><li>Thế nào là “thành công”?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Thời điểm và bối cảnh hình thành ý tưởng</li></ul>
+          </div>
+          <ol class="events" data-events-for="y-tuong"></ol>
+        </div>
+      </li>
+      <li class="phase rv" data-n="2" data-phase="nghien-cuu" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Nghiên cứu &amp; khám phá</h3>
+            <p class="sum">Tìm hiểu nhu cầu, khảo sát giải pháp hiện có và đánh giá tính khả thi kỹ thuật trước khi cam kết xây dựng.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Giải pháp hiện có thiếu điều gì?</li><li>Công nghệ nào phù hợp và vì sao?</li><li>Rủi ro lớn nhất là gì?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Kết quả nghiên cứu có thể công bố</li></ul>
+          </div>
+          <ol class="events" data-events-for="nghien-cuu"></ol>
+        </div>
+      </li>
+      <li class="phase rv" data-n="3" data-phase="nguyen-mau" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Nguyên mẫu &amp; thử nghiệm</h3>
+            <p class="sum">Dựng phiên bản nhỏ để kiểm chứng giả định, thu phản hồi sớm và loại bỏ hướng đi không hiệu quả.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Giả định nào đã được kiểm chứng?</li><li>Phản hồi nào làm thay đổi hướng đi?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Các vòng thử nghiệm và điều học được</li></ul>
+          </div>
+          <ol class="events" data-events-for="nguyen-mau"></ol>
+        </div>
+      </li>
+      <li class="phase rv" data-n="4" data-phase="xay-dung" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Xây dựng &amp; hoàn thiện</h3>
+            <p class="sum">Phát triển theo từng phần nhỏ, kiểm thử liên tục, hoàn thiện trải nghiệm, bảo mật và tài liệu.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Kiến trúc có đủ đơn giản để bảo trì?</li><li>Chất lượng được kiểm tra bằng cách nào?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Các thành phần đã hoàn thành và công khai được</li></ul>
+          </div>
+          <ol class="events" data-events-for="xay-dung"></ol>
+        </div>
+      </li>
+      <li class="phase rv" data-n="5" data-phase="phat-hanh" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Phát hành &amp; vận hành</h3>
+            <p class="sum">Đưa sản phẩm tới người dùng, theo dõi chất lượng, tiếp nhận hỗ trợ và sửa lỗi nhanh.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Người dùng bắt đầu bằng cách nào?</li><li>Sự cố được tiếp nhận và xử lý ra sao?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Phiên bản phát hành chính thức (nếu có)</li></ul>
+          </div>
+          <ol class="events" data-events-for="phat-hanh"></ol>
+        </div>
+      </li>
+      <li class="phase rv" data-n="6" data-phase="mo-rong" data-verified="false">
+        <div class="phase-card">
+          <div>
+            <span class="badge">Khung dự kiến</span>
+            <h3>Học hỏi &amp; mở rộng hệ sinh thái</h3>
+            <p class="sum">Rút bài học từ vận hành, cải tiến sản phẩm hiện có và mở rộng sang các dịch vụ, nền tảng liên quan.</p>
+          </div>
+          <div>
+            <h4>Câu hỏi cần trả lời</h4>
+            <ul><li>Điều gì nên giữ, điều gì nên bỏ?</li><li>Hướng mở rộng nào thật sự có ích?</li></ul>
+            <h4>Dữ liệu cần bổ sung</h4>
+            <ul><li>Định hướng đã được xác nhận</li></ul>
+          </div>
+          <ol class="events" data-events-for="mo-rong"></ol>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 04 QUY TRÌNH -->
+<section class="sec alt" id="quy-trinh" aria-labelledby="h-quy-trinh">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">04</span>
+      <div>
+        <p class="kicker">Từ ý tưởng tới người dùng</p>
+        <h2 id="h-quy-trinh">Nghiên cứu, thử nghiệm, hoàn thiện, phát hành</h2>
+      </div>
+    </div>
+    <figure class="fig rv" style="margin:0">
+      <svg viewBox="0 0 900 150" role="img" aria-labelledby="pipe-t pipe-d">
+        <title id="pipe-t">Quy trình bốn bước</title>
+        <desc id="pipe-d">Nghiên cứu dẫn tới thử nghiệm, hoàn thiện, phát hành; phản hồi quay lại bước nghiên cứu.</desc>
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor" style="color:var(--ink)"/></marker></defs>
+        <g class="sv-fill"><rect x="10" y="30" width="180" height="60" rx="30"/><rect x="250" y="30" width="180" height="60" rx="30"/><rect x="490" y="30" width="180" height="60" rx="30"/><rect x="730" y="30" width="160" height="60" rx="30"/></g>
+        <rect class="sv-acc" x="730" y="30" width="160" height="60" rx="30"/>
+        <g class="sv-ink" marker-end="url(#ar)"><path d="M190 60H248" marker-end="url(#ar)"/><path d="M430 60H488" marker-end="url(#ar)"/><path d="M670 60H728" marker-end="url(#ar)"/></g>
+        <g class="sv-t" text-anchor="middle"><text x="100" y="65">1 · Nghiên cứu</text><text x="340" y="65">2 · Thử nghiệm</text><text x="580" y="65">3 · Hoàn thiện</text></g>
+        <text class="sv-ta" x="810" y="65" text-anchor="middle">4 · Phát hành</text>
+        <path class="sv-gold" stroke-dasharray="6 6" d="M810 92 V130 H100 V92" marker-end="url(#ar)"/>
+        <text class="sv-tm" x="455" y="124" text-anchor="middle">phản hồi quay lại nghiên cứu</text>
+      </svg>
+      <figcaption>Hình minh họa khái niệm về vòng lặp làm sản phẩm.</figcaption>
+    </figure>
+    <div class="pipe">
+      <article class="step rv"><h3>Nghiên cứu</h3><p>Làm rõ vấn đề, người dùng và ràng buộc. Ghi lại giả định để có thể kiểm chứng.</p><p class="gate"><b>Cổng kiểm tra</b>Vấn đề và mục tiêu được mô tả rõ ràng.</p></article>
+      <article class="step rv"><h3>Thử nghiệm</h3><p>Dựng nguyên mẫu nhỏ, thử với người dùng thật và chấp nhận bỏ ý tưởng không hiệu quả.</p><p class="gate"><b>Cổng kiểm tra</b>Giả định chính đã được kiểm chứng.</p></article>
+      <article class="step rv"><h3>Hoàn thiện</h3><p>Làm cho sản phẩm ổn định: kiểm thử, hiệu năng, bảo mật cơ bản, khả năng truy cập và tài liệu.</p><p class="gate"><b>Cổng kiểm tra</b>Đạt tiêu chí chất lượng đã thống nhất.</p></article>
+      <article class="step rv"><h3>Phát hành</h3><p>Triển khai theo từng bước, có kế hoạch hỗ trợ, theo dõi sự cố và thu thập phản hồi.</p><p class="gate"><b>Cổng kiểm tra</b>Có cách hoàn tác và kênh hỗ trợ sẵn sàng.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BÀI HỌC -->
+<section class="sec" id="bai-hoc" aria-labelledby="h-bai-hoc">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">05</span>
+      <div>
+        <p class="kicker">Nguyên tắc &amp; định hướng</p>
+        <h2 id="h-bai-hoc">Bài học, nguyên tắc và hướng đi</h2>
+      </div>
+    </div>
+    <p class="lede rv" style="margin-bottom:2rem">Đây là những nguyên tắc làm việc chúng tôi theo đuổi, được trình bày như định hướng chung của ngành phần mềm, không phải câu chuyện cá nhân hay tuyên bố về kết quả đã đạt.</p>
+    <div class="cols3">
+      <article class="col rv">
+        <h3>Bài học làm sản phẩm</h3>
+        <ul>
+          <li><strong>Phạm vi nhỏ đi nhanh hơn.</strong> Giải quyết trọn một việc tốt hơn làm dang dở nhiều việc.</li>
+          <li><strong>Phản hồi sớm rẻ hơn sửa muộn.</strong> Đưa sản phẩm ra thử càng sớm càng ít lãng phí.</li>
+          <li><strong>Tài liệu là một phần sản phẩm.</strong> Thiếu hướng dẫn thì tính năng tốt cũng khó dùng.</li>
+        </ul>
+      </article>
+      <article class="col rv">
+        <h3>Nguyên tắc vận hành</h3>
+        <ul>
+          <li><strong>Trung thực.</strong> Không hứa điều chưa làm được, không dùng số liệu không có nguồn.</li>
+          <li><strong>Tôn trọng dữ liệu.</strong> Thu thập tối thiểu, giải thích rõ, bảo vệ cẩn trọng.</li>
+          <li><strong>Dễ tiếp cận.</strong> Thiết kế cho nhiều thiết bị, cỡ chữ và khả năng sử dụng khác nhau.</li>
+        </ul>
+      </article>
+      <article class="col rv">
+        <h3>Định hướng tương lai</h3>
+        <ul>
+          <li><strong>Hoàn thiện nền tảng hiện có</strong> trước khi mở rộng thêm.</li>
+          <li><strong>Kết nối các website</strong> thành trải nghiệm liền mạch cho người dùng.</li>
+          <li><strong>Chia sẻ kiến thức kỹ thuật</strong> khi đủ chín muồi để công bố.</li>
+        </ul>
+        <p class="note" style="margin-top:1rem">Định hướng không phải cam kết về thời gian hay kết quả.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 HỆ SINH THÁI -->
+<section class="sec alt" id="he-sinh-thai" aria-labelledby="h-eco">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">06</span>
+      <div>
+        <p class="kicker">Mười website · mười vai trò</p>
+        <h2 id="h-eco">Hệ sinh thái Tết Pro Software</h2>
+      </div>
+    </div>
+    <p class="lede rv" style="margin-bottom:2rem">Mỗi tên miền đảm nhận một mục đích riêng. Vai trò bên dưới mô tả định hướng cấu trúc của hệ sinh thái; nội dung cụ thể của từng website do website đó công bố.</p>
+    <ul class="eco" id="eco">
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.com/"><div class="tld">.<span>com</span></div><h3>Cổng thương hiệu chính</h3><p>Điểm vào đầu tiên: giới thiệu tổng quan về Tết Pro Software và dẫn tới các trang khác.</p><span class="go">tetprosoftware.com ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.net/"><div class="tld">.<span>net</span></div><h3>Hạ tầng &amp; dịch vụ kỹ thuật</h3><p>Dịch vụ tích hợp, vận hành và hỗ trợ kỹ thuật cho hệ thống phần mềm.</p><span class="go">tetprosoftware.net ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.org/"><div class="tld">.<span>org</span></div><h3>Cộng đồng &amp; nguyên tắc</h3><p>Nơi chia sẻ nguyên tắc làm việc, kiến thức và các hoạt động hướng tới cộng đồng.</p><span class="go">tetprosoftware.org ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.online/"><div class="tld">.<span>online</span></div><h3>Dịch vụ trực tuyến</h3><p>Tiếp nhận tư vấn, đăng ký và làm việc từ xa với người dùng, doanh nghiệp.</p><span class="go">tetprosoftware.online ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.me/"><div class="tld">.<span>me</span></div><h3>Con người &amp; góc nhìn</h3><p>Không gian dành cho đội ngũ, góc nhìn và những chia sẻ mang tính cá nhân hơn.</p><span class="go">tetprosoftware.me ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.store/"><div class="tld">.<span>store</span></div><h3>Sản phẩm &amp; giấy phép</h3><p>Nơi tìm hiểu sản phẩm, gói sử dụng và đăng ký giấy phép.</p><span class="go">tetprosoftware.store ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.tech/"><div class="tld">.<span>tech</span></div><h3>Kỹ thuật &amp; tài liệu</h3><p>Ghi chú kiến trúc, tài liệu kỹ thuật và kết quả nghiên cứu dành cho người làm công nghệ.</p><span class="go">tetprosoftware.tech ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.app/"><div class="tld">.<span>app</span></div><h3>Ứng dụng &amp; dùng thử</h3><p>Trải nghiệm ứng dụng, bản dùng thử và các bản phát hành sản phẩm.</p><span class="go">tetprosoftware.app ↗</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.xyz/" aria-current="page"><span class="here">Trang hiện tại</span><div class="tld">.<span>xyz</span></div><h3>Hành trình &amp; câu chuyện</h3><p>Kể lại quá trình xây dựng, triết lý và cách làm việc — chính là trang bạn đang đọc.</p><span class="go">tetprosoftware.xyz</span></a></li>
+      <li class="rv"><a class="card" href="https://www.tetprosoftware.site/"><div class="tld">.<span>site</span></div><h3>Dự án thử nghiệm &amp; landing</h3><p>Trang giới thiệu dự án mới, nguyên mẫu công khai và các chiến dịch theo chủ đề.</p><span class="go">tetprosoftware.site ↗</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 LIÊN HỆ -->
+<section class="sec" id="lien-he" aria-labelledby="h-lien-he">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num" aria-hidden="true">07</span>
+      <div>
+        <p class="kicker">Kết nối</p>
+        <h2 id="h-lien-he">Liên hệ &amp; mạng xã hội</h2>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="rv">
+        <dl class="dl">
+          <div><dt>Doanh nghiệp</dt><dd>Công ty Cổ phần Phần mềm Tết Pro</dd></div>
+          <div><dt>Thương hiệu</dt><dd>Tết Pro Software</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:lien-he@tetprosoftware.com">lien-he@tetprosoftware.com</a></dd></div>
+          <div><dt>Địa chỉ</dt><dd><address>30 Phan Đình Phùng, Ba Đình, Hà Nội, Việt Nam</address></dd></div>
+          <div><dt>Người đại diện (theo thông tin cung cấp)</dt><dd>Ngô Anh Vũ</dd></div>
+        </dl>
+      </div>
+      <div class="rv">
+        <ul class="social" aria-label="Mạng xã hội">
+          <li><a href="https://www.facebook.com/tetprosoftware" rel="noopener" target="_blank">Facebook <span>/tetprosoftware</span></a></li>
+          <li><a href="https://www.instagram.com/tetprosoftware" rel="noopener" target="_blank">Instagram <span>@tetprosoftware</span></a></li>
+          <li><a href="https://www.threads.com/@tetprosoftware" rel="noopener" target="_blank">Threads <span>@tetprosoftware</span></a></li>
+          <li><a href="https://www.tiktok.com/@tetprosoftware" rel="noopener" target="_blank">TikTok <span>@tetprosoftware</span></a></li>
+          <li><a href="https://www.youtube.com/@tetprosoftware" rel="noopener" target="_blank">YouTube <span>@tetprosoftware</span></a></li>
+          <li><a href="https://github.com/tetprosoftware" rel="noopener" target="_blank">GitHub <span>tetprosoftware</span></a></li>
+          <li><a href="https://www.pinterest.com/tetprosoftware" rel="noopener" target="_blank">Pinterest <span>tetprosoftware</span></a></li>
+          <li><a href="https://www.linkedin.com/company/tetprosoftware" rel="noopener" target="_blank">LinkedIn <span>/company</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="guide rv">
+      <summary>Hướng dẫn cho chủ website: thay khung dự kiến bằng sự kiện thật</summary>
+      <p>Cuối file này có khối <code>&lt;script type="application/json" id="timeline-data"&gt;</code>. Mỗi giai đoạn có một mảng <code>events</code> đang để trống. Thêm đối tượng sự kiện vào đúng giai đoạn; trang sẽ tự hiển thị và đổi nhãn giai đoạn thành “Có dữ liệu”. Khi mọi giai đoạn đã có dữ liệu, thông báo “khung dự kiến” sẽ tự ẩn.</p>
+      <p>Mã giai đoạn hợp lệ: <code>y-tuong</code>, <code>nghien-cuu</code>, <code>nguyen-mau</code>, <code>xay-dung</code>, <code>phat-hanh</code>, <code>mo-rong</code>. Định dạng một sự kiện (chỉ thêm khi thông tin là thật và có thể kiểm chứng):</p>
+<pre>{
+  "date": "YYYY-MM-DD hoặc YYYY-MM hoặc YYYY",
+  "title": "Tiêu đề sự kiện",
+  "description": "Mô tả ngắn, trung thực",
+  "source": "https://liên-kết-nguồn (không bắt buộc)"
+}</pre>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Tết Pro Software — Công ty Cổ phần Phần mềm Tết Pro</span>
+    <span><a href="https://www.tetprosoftware.xyz/">tetprosoftware.xyz</a> · <a href="#top">Lên đầu trang ↑</a></span>
+  </div>
+</footer>
+
+<!-- DỮ LIỆU TIMELINE: chủ website chỉnh tại đây. Không thêm sự kiện nếu chưa có thông tin thật. -->
+<script type="application/json" id="timeline-data">
+{
+  "phases": {
+    "y-tuong":    { "events": [] },
+    "nghien-cuu": { "events": [] },
+    "nguyen-mau": { "events": [] },
+    "xay-dung":   { "events": [] },
+    "phat-hanh":  { "events": [] },
+    "mo-rong":    { "events": [] }
+  }
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('js');
+
+  /* ---- Timeline từ JSON ---- */
+  try{
+    var raw = document.getElementById('timeline-data');
+    var data = raw ? JSON.parse(raw.textContent) : {phases:{}};
+    var phases = data.phases || {};
+    var allFilled = true;
+    document.querySelectorAll('.phase').forEach(function(li){
+      var id = li.getAttribute('data-phase');
+      var evs = (phases[id] && Array.isArray(phases[id].events)) ? phases[id].events.filter(function(e){return e && e.title;}) : [];
+      var list = li.querySelector('.events');
+      if(!evs.length){ allFilled = false; return; }
+      evs.forEach(function(e){
+        var item = document.createElement('li');
+        if(e.date){
+          var t = document.createElement('time');
+          t.setAttribute('datetime', String(e.date));
+          t.textContent = String(e.date);
+          item.appendChild(t);
+        }
+        var s = document.createElement('strong');
+        s.textContent = String(e.title);
+        item.appendChild(s);
+        if(e.description){
+          var p = document.createElement('p');
+          p.textContent = String(e.description);
+          item.appendChild(p);
+        }
+        if(e.source && /^https?:\/\//i.test(e.source)){
+          var a = document.createElement('a');
+          a.href = e.source; a.rel = 'noopener'; a.target = '_blank';
+          a.textContent = 'Nguồn ↗';
+          a.style.fontSize = '.85rem';
+          item.appendChild(a);
+        }
+        list.appendChild(item);
+      });
+      li.setAttribute('data-verified','true');
+      var badge = li.querySelector('.badge');
+      if(badge) badge.textContent = 'Có dữ liệu';
+    });
+    if(allFilled){
+      var b = document.getElementById('tl-banner');
+      if(b) b.hidden = true;
+    }
+  }catch(err){
+    /* JSON lỗi: giữ nguyên khung dự kiến */
+    if(window.console) console.warn('timeline-data không hợp lệ:', err);
+  }
+
+  /* ---- Sơ đồ hub 10 website ---- */
+  var hub = document.getElementById('hub');
+  if(hub){
+    var tlds = ['com','net','org','online','me','store','tech','app','xyz','site'];
+    var cx=300, cy=200, R=150, svg='';
+    svg += '<svg viewBox="0 0 600 400" width="100%" focusable="false"><g>';
+    tlds.forEach(function(t,i){
+      var a = (i/tlds.length)*Math.PI*2 - Math.PI/2;
+      var x = cx + Math.cos(a)*R*1.55, y = cy + Math.sin(a)*R*1.15;
+      svg += '<line x1="'+cx+'" y1="'+cy+'" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" class="sv-line" stroke-dasharray="4 5"/>';
+    });
+    svg += '</g><circle cx="'+cx+'" cy="'+cy+'" r="46" class="sv-acc"/>';
+    svg += '<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" class="sv-ta">Tết Pro</text>';
+    svg += '<text x="'+cx+'" y="'+(cy+14)+'" text-anchor="middle" class="sv-ta">Software</text>';
+    tlds.forEach(function(t,i){
+      var a = (i/tlds.length)*Math.PI*2 - Math.PI/2;
+      var x = cx + Math.cos(a)*R*1.55, y = cy + Math.sin(a)*R*1.15;
+      var cur = t==='xyz';
+      svg += '<g><rect x="'+(x-38).toFixed(1)+'" y="'+(y-16).toFixed(1)+'" width="76" height="32" rx="16" class="'+(cur?'sv-acc':'sv-tech')+'"/>';
+      svg += '<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="middle" class="'+(cur?'sv-ta':'sv-t')+'">.'+t+'</text></g>';
+    });
+    svg += '</svg>';
+    hub.innerHTML = svg;
+  }
+
+  /* ---- Hiệu ứng xuất hiện ---- */
+  var rv = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)){
+    rv.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el);});
+  }
+
+  /* ---- Đánh dấu mục điều hướng đang xem ---- */
+  var links = document.querySelectorAll('.nav a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('on'); l.removeAttribute('aria-current');});
+          var l = map[en.target.id];
+          if(l){ l.classList.add('on'); l.setAttribute('aria-current','true'); }
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    Object.keys(map).forEach(function(id){
+      var s = document.getElementById(id); if(s) so.observe(s);
+    });
+  }
+})();
+</script>
+</body>
+</html>
