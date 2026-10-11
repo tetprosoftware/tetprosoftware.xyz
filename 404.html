@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Không tìm thấy trang (404) | Tết Pro Software</title>
+<meta name="description" content="Trang bạn tìm không tồn tại hoặc đã được di chuyển. Quay về trang chủ hoặc khám phá hệ sinh thái Tết Pro Software.">
+<meta name="robots" content="noindex, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#247A50">
+<link href='/image.png' rel='image_src'/>
+<meta content='/logo.png' name='msapplication-TileImage'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='57x57'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='60x60'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='72x72'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='76x76'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='114x114'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='120x120'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='144x144'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='152x152'/>
+<link href='/logo.png' rel='apple-touch-icon' sizes='180x180'/>
+<link href='/logo.png' rel='icon' sizes='16x16' type='image/png'/>
+<link href='/logo.png' rel='icon' sizes='32x32' type='image/png'/>
+<link href='/logo.png' rel='icon' sizes='96x96' type='image/png'/>
+<link href='/logo.png' rel='icon' sizes='192x192' type='image/png'/>
+<meta content='/image.png' property='og:image'/>
+<meta content='/image.png' name='twitter:image'/>
+  <script>
+/* Áp theme sớm để tránh nhấp nháy. Lỗi localStorage được bỏ qua. */
+(function(){try{var t=localStorage.getItem('tps-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+
+<!--[ Schema Structured Data: Organization, WebSite, Service ]-->
+<script>
+(function () {
+  var MAIN = "https://www.tetprosoftware.com";
+  var ORG_ID = MAIN + "/#organization";
+
+  var SITES = {
+    "tetprosoftware.com":    { name: "Tết Pro Software", description: "Tết Pro Software - Giải pháp chuyển đổi số toàn diện!", language: "vi-VN" },
+    "tetprosoftware.net":    { name: "Tết Pro Software Global", description: "Tết Pro Software - Software solutions, digital transformation and technology.", language: "en" },
+    "tetprosoftware.org":    { name: "Tết Pro Software Organization", description: "Thông tin tổ chức, định hướng và các hoạt động của Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.online": { name: "Tết Pro Software Status", description: "Trang thông tin trạng thái hệ thống và dịch vụ trực tuyến của Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.me":     { name: "Tết Pro Software Profile", description: "Hồ sơ thương hiệu, thông tin liên hệ và danh mục website thuộc hệ sinh thái Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.store":  { name: "Tết Pro Software Store", description: "Thông tin dịch vụ, giải pháp phần mềm và bảng giá được công bố bởi Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.tech":   { name: "Tết Pro Software Tech", description: "Kiến thức công nghệ, kỹ thuật phần mềm và các giải pháp công nghệ của Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.app":    { name: "Tết Pro Software Apps", description: "Danh mục ứng dụng phần mềm và hướng dẫn cài đặt thuộc hệ sinh thái Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.xyz":    { name: "Tết Pro Software Story", description: "Câu chuyện thương hiệu, hành trình phát triển và định hướng của Tết Pro Software.", language: "vi-VN" },
+    "tetprosoftware.site":   { name: "Tết Pro Software Products", description: "Danh mục sản phẩm phần mềm và thông tin sản phẩm của Tết Pro Software.", language: "vi-VN" }
+  };
+
+  var host = location.hostname.replace(/^www\./, "").toLowerCase();
+  var origin = location.origin;
+  var path = location.pathname;
+
+  // Nhận diện domain; nếu không có trong danh sách thì dùng dữ liệu của chính trang
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var site = SITES[host] || {
+    name: document.title,
+    description: metaDesc ? metaDesc.content : "",
+    language: document.documentElement.lang || "vi-VN"
+  };
+
+  var canonical = document.querySelector('link[rel="canonical"]');
+  var pageUrl = (canonical && canonical.href) || (origin + path);
+
+  // Mô tả sẵn cho 2 trang chung, chỉ áp dụng trên domain chính
+  var presetPages = {
+    "/p/gioi-thieu.html": {
+      name: "Giới thiệu",
+      description: "Chúng tôi là những người sáng tạo, kết nối ý tưởng với hiện thực. Hãy cùng chúng tôi khám phá hành trình đổi mới!"
+    },
+    "/p/lien-he.html": {
+      name: "Liên hệ",
+      description: "Liên hệ với chúng tôi để khám phá giải pháp phần mềm tối ưu. Hãy chia sẻ ý tưởng của bạn - chúng tôi ở đây để hỗ trợ!"
+    }
+  };
+
+  var info;
+  if (path === "/") {
+    info = { name: "Trang chủ - " + site.name };
+  } else if (host === "tetprosoftware.com" && presetPages[path]) {
+    info = presetPages[path];
+  } else {
+    info = { name: document.title };
+  }
+
+  var webPage = {
+    "@type": "WebPage",
+    "@id": pageUrl + "#webpage",
+    "url": pageUrl,
+    "name": info.name,
+    "inLanguage": site.language,
+    "isPartOf": { "@id": origin + "/#website" }
+  };
+  if (info.description) webPage.description = info.description;
+  if (path === "/") webPage.about = { "@id": ORG_ID };
+
+  var data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        "name": "Tết Pro",
+        "legalName": "Tết Pro Software JSC",
+        "slogan": "Giải pháp chuyển đổi số toàn diện - Vì một tương lai tươi sáng hơn!",
+        "url": MAIN,
+        "founder": { "@type": "Person", "name": "Ngô Anh Vũ" },
+        "foundingDate": "2021-05-25",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieUHOWp5V05IZV49DjNBoZRuyzD0bGzmlLAmtxWHXj6ZCob0RgZPRX7WrqMPP7BJiotJ6ztL1Z2sd3a3FeFNQNc43DtdrMLfHMI7jX5yA3bRpvulx5nWeM3zFf4Jp0fnIO59CBCnW4eHbCW1ApFRPB-L5o8K4SiB2Lgmz8hh7Fs7JDlHi5j7hiDIAK3a9l/"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieUHOWp5V05IZV49DjNBoZRuyzD0bGzmlLAmtxWHXj6ZCob0RgZPRX7WrqMPP7BJiotJ6ztL1Z2sd3a3FeFNQNc43DtdrMLfHMI7jX5yA3bRpvulx5nWeM3zFf4Jp0fnIO59CBCnW4eHbCW1ApFRPB-L5o8K4SiB2Lgmz8hh7Fs7JDlHi5j7hiDIAK3a9l/"
+        },
+        "member": { "@type": "Person", "name": "Lê Minh Ngọc" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "30 Phan Đình Phùng",
+          "addressLocality": "Ba Đình",
+          "addressRegion": "Hà Nội",
+          "postalCode": "11120",
+          "addressCountry": "VN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Liên hệ",
+          "telephone": "+84888888888",
+          "email": "lienhe@tetprovn.com",
+          "url": MAIN + "/p/lien-he.html"
+        },
+        "sameAs": [
+          "https://www.facebook.com/Tetpro.official",
+          "https://www.youtube.com/c/TetProVN",
+          "https://www.pinterest.com/Tetprovn",
+          "https://www.tetproagency.site",
+          "https://www.tetpro.xyz",
+          "https://www.tetproagency.net",
+          "https://www.tetproagency.online",
+          "https://www.tetproagency.app",
+          "https://www.tetproagency.store",
+          "https://www.tetproagency.me",
+          "https://www.tetproagency.org",
+          "https://www.tetpro.tech",
+          "https://www.tetproagency.com",
+          "https://www.tetpro.me",
+          "https://www.tetpro.app",
+          "https://www.tetpro.net",
+          "https://www.tetpro.online",
+          "https://www.tetpro.site",
+          "https://www.tetpro.store",
+          "https://www.tetprosoftware.online",
+          "https://www.tetprosoftware.tech",
+          "https://www.tetprosoftware.com",
+          "https://www.tetprosoftware.site",
+          "https://www.tetprosoftware.net",
+          "https://www.tetprosoftware.store",
+          "https://www.tetprosoftware.app",
+          "https://www.tetprosoftware.me",
+          "https://www.tetproagency.tech",
+          "https://www.tetprosoftware.org",
+          "https://www.tetprovn.tech",
+          "https://www.tetprovn.site",
+          "https://www.tetprovn.net",
+          "https://www.tetprovn.org",
+          "https://www.tetprovn.com",
+          "https://www.tetprovn.me",
+          "https://www.tetprovn.online",
+          "https://www.tetprosoftware.xyz",
+          "https://www.tetprovn.app",
+          "https://www.tetprovn.store",
+          "https://www.tetprovn.xyz",
+          "https://tet.pro.vn"
+        ],
+        "owns": [
+          {
+            "@type": "Product",
+            "name": "Been Together",
+            "description": "Đồng hành cùng bạn trên con đường tình yêu!",
+            "review": {
+              "@type": "Review",
+              "reviewRating": { "@type": "Rating", "ratingValue": 4, "bestRating": 5 },
+              "author": { "@type": "Person", "name": "Ngô Anh Vũ" }
+            },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.4, "reviewCount": 89 }
+          },
+          {
+            "@type": "Product",
+            "name": "Student Manager",
+            "description": "Ứng dụng quản lý học sinh mạnh mẽ và hiệu quả!",
+            "review": {
+              "@type": "Review",
+              "reviewRating": { "@type": "Rating", "ratingValue": 4, "bestRating": 5 },
+              "author": [
+                { "@type": "Person", "name": "Ninh Thị Thanh Hoa" },
+                { "@type": "Person", "name": "Lê Minh Ngọc" }
+              ]
+            },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.5, "reviewCount": 88 }
+          }
+        ]
+      },
+      {
+        // Đúng một node WebSite, lấy từ SITES theo domain đang chạy
+        "@type": "WebSite",
+        "@id": origin + "/#website",
+        "url": origin,
+        "name": site.name,
+        "description": site.description,
+        "inLanguage": site.language,
+        "publisher": { "@id": ORG_ID }
+      },
+      webPage,
+      {
+        "@type": "Service",
+        "name": "Dịch vụ mạng xã hội",
+        "description": "Tận dụng sức mạnh của mạng xã hội để quảng bá thương hiệu của bạn, thu hút sự chú ý và tạo ảnh hưởng tích cực.",
+        "provider": { "@id": ORG_ID },
+        "brand": { "@type": "Brand", "name": "Social Media" },
+        "offers": [
+          { "@type": "AggregateOffer", "name": "Giá rẻ", "priceCurrency": "VND", "lowPrice": 44900 },
+          { "@type": "AggregateOffer", "name": "Phổ thông", "priceCurrency": "VND", "lowPrice": 99000 },
+          { "@type": "AggregateOffer", "name": "Cao cấp", "priceCurrency": "VND", "lowPrice": 189000 }
+        ]
+      }
+    ]
+  };
+
+  var old = document.getElementById("auto-jsonld");
+  if (old) old.remove();
+  var s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.id = "auto-jsonld";
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+})();
+</script>
+<style>
+/* ===== Biến giao diện ===== */
+:root{
+  --bg:#F8FBF8;--surface:#FFFFFF;--primary:#247A50;--soft:#DDF3E5;--pale:#EFF8F1;
+  --text:#17251D;--text2:#65736A;--border:#DCE8DE;--on-primary:#fff;
+  --shadow:0 10px 30px -14px rgba(23,37,29,.22);
+  --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101813;--surface:#18231C;--primary:#5FC48C;--soft:#1F3A2A;--pale:#16241B;
+    --text:#F0F7F1;--text2:#A5B7A9;--border:#2A3B2F;--on-primary:#0E1A12;
+    --shadow:0 10px 30px -14px rgba(0,0,0,.6);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101813;--surface:#18231C;--primary:#5FC48C;--soft:#1F3A2A;--pale:#16241B;
+  --text:#F0F7F1;--text2:#A5B7A9;--border:#2A3B2F;--on-primary:#0E1A12;
+  --shadow:0 10px 30px -14px rgba(0,0,0,.6);color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(900px 420px at 85% -10%,var(--soft),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
+svg{display:block}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.bar{display:flex;align-items:center;gap:.75rem;min-height:60px;flex-wrap:wrap;padding-block:.4rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:700;letter-spacing:.01em;margin-right:auto}
+.logo svg{width:30px;height:30px;flex:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.25rem}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .8rem;border-radius:999px;text-decoration:none;color:var(--text2);font-size:.95rem}
+nav a:hover{background:var(--pale);color:var(--text)}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);display:inline-grid;place-items:center;cursor:pointer}
+.icon-btn:hover{background:var(--pale)}
+.icon-btn svg{width:20px;height:20px}
+.moon{display:none}
+:root[data-theme="dark"] .sun{display:none}
+:root[data-theme="dark"] .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sun{display:none}:root:not([data-theme="light"]) .moon{display:block}}
+#menuBtn{display:none}
+@media (max-width:719px){
+  #menuBtn{display:inline-grid}
+  nav{order:5;width:100%;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;padding-bottom:.5rem}
+}
+
+/* ===== Hero ===== */
+.hero{display:grid;gap:2rem;align-items:center;padding-block:clamp(2rem,6vw,4.5rem);grid-template-columns:1fr}
+@media (min-width:880px){.hero{grid-template-columns:1.05fr .95fr;gap:3rem}}
+.eyebrow{display:inline-block;margin:0 0 1rem;padding:.3rem .8rem;border:1px solid var(--border);background:var(--pale);border-radius:999px;font-size:.78rem;letter-spacing:.08em;color:var(--primary);font-weight:600}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,6.4vw,4rem);line-height:1.08;margin:0 0 1rem;letter-spacing:-.02em;overflow-wrap:anywhere}
+.lead{color:var(--text2);font-size:clamp(1rem,2.2vw,1.15rem);max-width:56ch;margin:0 0 1.5rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:0 1.3rem;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);text-decoration:none;font:inherit;font-weight:600;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.link{color:var(--primary);font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.urlbox{margin:1.1rem 0 0;padding:.7rem .9rem;border-radius:12px;background:var(--pale);border:1px dashed var(--border);font-size:.9rem;color:var(--text2);word-break:break-all}
+.urlbox[hidden]{display:none}
+.urlbox code{color:var(--text)}
+
+/* Minh họa */
+.art{width:100%;max-width:520px;margin-inline:auto;color:var(--primary)}
+.art svg{width:100%;height:auto;max-height:420px}
+.art .num{font-family:var(--serif);font-weight:700;font-size:150px;fill:var(--soft);stroke:var(--primary);stroke-width:2}
+.art .path{stroke:var(--primary);stroke-width:3;fill:none;stroke-linecap:round}
+.art .gap{stroke-dasharray:2 12;opacity:.55}
+.art .node{fill:var(--surface);stroke:var(--primary);stroke-width:3}
+.art .glow{fill:var(--primary);opacity:.15;transform-origin:center;transform-box:fill-box}
+.art .lens{fill:var(--surface);stroke:var(--primary);stroke-width:5}
+.art .draw{stroke-dasharray:260;stroke-dashoffset:260;animation:draw 1.6s .2s ease forwards}
+.art .float{animation:float 6s ease-in-out infinite}
+.art .pulse{animation:pulse 3s ease-in-out infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.05}}
+
+/* ===== Tìm kiếm ===== */
+.search{margin-block:0 clamp(2rem,5vw,3rem);padding:clamp(1rem,3vw,1.6rem);background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
+.search form{display:flex;gap:.6rem;flex-wrap:wrap}
+.search input{flex:1 1 220px;min-height:48px;padding:0 1rem;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
+.search input::placeholder{color:var(--text2)}
+#msg{margin:.8rem 0 0;color:var(--text2);font-size:.95rem}
+#results{list-style:none;margin:.5rem 0 0;padding:0;display:grid;gap:.5rem}
+#results a{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border:1px solid var(--border);border-radius:12px;text-decoration:none;background:var(--pale)}
+#results a:hover{border-color:var(--primary)}
+#results small{color:var(--text2)}
+
+/* ===== Hệ sinh thái ===== */
+section.eco{padding-bottom:clamp(2rem,5vw,3.5rem)}
+h2{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.2rem);margin:0 0 .4rem;letter-spacing:-.01em}
+.sub{color:var(--text2);margin:0 0 1.2rem}
+.here{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;padding:.8rem 1rem;border-radius:14px;background:var(--soft);border:1px solid var(--primary);font-weight:600}
+.here[hidden]{display:none}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
+.card{display:flex;flex-direction:column;gap:.5rem;padding:1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--primary)}
+.card .top{display:flex;align-items:center;justify-content:space-between}
+.ico{width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--primary);display:grid;place-items:center}
+.ico svg{width:22px;height:22px}
+.arrow{width:20px;height:20px;color:var(--text2)}
+.card:hover .arrow{color:var(--primary)}
+.card h3{margin:.3rem 0 0;font-size:1.05rem}
+.card .dom{font-size:.85rem;color:var(--primary);overflow-wrap:anywhere}
+.card p{margin:0;color:var(--text2);font-size:.92rem}
+
+/* ===== Quick actions ===== */
+.quick{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.quick .btn{min-height:44px;font-weight:500;font-size:.92rem}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--border);background:var(--pale);padding-block:2rem;font-size:.92rem}
+.fgrid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+footer h4{margin:0 0 .6rem;font-size:.95rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.1rem}
+footer li a{display:inline-flex;min-height:32px;align-items:center;color:var(--text2);text-decoration:none;overflow-wrap:anywhere}
+footer li a:hover{color:var(--primary);text-decoration:underline}
+.copy{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--text2)}
+
+/* ===== Hiệu ứng nhập trang (một lần) và giảm chuyển động ===== */
+.hero>div:first-child{animation:in .6s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .art .draw{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="/" id="logoLink" aria-label="Tết Pro Software - Trang chủ">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--primary)"/><circle cx="10" cy="21" r="3" fill="var(--on-primary)"/><circle cx="22" cy="11" r="3" fill="var(--soft)"/><path d="M12 19l8-6" stroke="var(--on-primary)" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Tết Pro Software</span>
+    </a>
+    <nav id="nav" aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="/" class="js-home">Về trang chủ</a></li>
+        <li><a href="#he-sinh-thai">Hệ sinh thái</a></li>
+        <li><a href="https://www.tetprosoftware.online">Trạng thái</a></li>
+        <li><a href="mailto:lien-he@tetprosoftware.com">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Chuyển chế độ sáng/tối">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">ERROR 404 · PAGE NOT FOUND</p>
+      <h1>Ối! Lạc khỏi hệ sinh thái rồi.</h1>
+      <p class="lead">Trang bạn đang tìm có thể đã được di chuyển, đổi địa chỉ hoặc không còn tồn tại. Đừng lo, hãy để Tết Pro Software giúp bạn tìm lại đúng nơi.</p>
+      <div class="cta">
+        <a class="btn primary js-home" href="/">Về trang chủ</a>
+        <a class="btn" href="#he-sinh-thai">Khám phá hệ sinh thái</a>
+        <button class="link btn" id="urlBtn" type="button" style="border:0;background:none;box-shadow:none;padding:0 .3rem" aria-expanded="false" aria-controls="urlbox">Kiểm tra địa chỉ URL</button>
+      </div>
+      <p class="urlbox" id="urlbox" hidden>Địa chỉ đã mở: <code id="urlText"></code><br>Hãy kiểm tra lỗi chính tả, dấu gạch ngang hoặc phần mở rộng tệp.</p>
+    </div>
+
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+        <circle class="glow pulse" cx="390" cy="120" r="40"/>
+        <text class="num" x="260" y="250" text-anchor="middle">404</text>
+        <path class="path draw" d="M40 340 C100 340 120 300 170 300 S250 330 290 320"/>
+        <path class="path gap" d="M290 320 C320 312 330 290 350 280"/>
+        <path class="path draw" d="M350 280 C380 262 400 200 440 150" style="animation-delay:.9s"/>
+        <circle class="node" cx="40" cy="340" r="9"/>
+        <circle class="node" cx="170" cy="300" r="9"/>
+        <circle class="node float" cx="440" cy="150" r="11" style="animation-delay:-2s"/>
+        <circle class="node float" cx="470" cy="300" r="7" style="animation-delay:-4s"/>
+        <circle class="node float" cx="70" cy="110" r="7" style="animation-delay:-1s"/>
+        <g class="float" transform="translate(300 330)">
+          <circle class="lens" cx="0" cy="0" r="22"/>
+          <path d="M16 16l22 22" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="search" aria-labelledby="sTitle">
+    <h2 id="sTitle" class="sr">Tìm trang trong hệ sinh thái</h2>
+    <form id="searchForm" role="search" novalidate>
+      <label for="q" class="sr">Từ khóa tìm kiếm</label>
+      <input id="q" name="q" type="search" placeholder="Bạn đang tìm trang nào?" autocomplete="off" maxlength="80">
+      <button class="btn primary" type="submit">Tìm kiếm</button>
+    </form>
+    <p id="msg" role="status" aria-live="polite">Gợi ý: dịch vụ, ứng dụng, công nghệ, trạng thái, liên hệ…</p>
+    <ul id="results"></ul>
+    <div class="quick" aria-label="Thao tác nhanh">
+      <a class="btn js-home" href="/">Về trang chủ</a>
+      <button class="btn" id="backBtn" type="button">Quay lại trang trước</button>
+      <a class="btn" href="https://www.tetprosoftware.online">Xem trạng thái</a>
+      <a class="btn" href="mailto:lien-he@tetprosoftware.com">Gửi email hỗ trợ</a>
+      <a class="btn" href="#he-sinh-thai">Toàn bộ hệ sinh thái</a>
+    </div>
+  </section>
+
+  <section class="eco" id="he-sinh-thai" aria-labelledby="ecoTitle">
+    <h2 id="ecoTitle">Có thể bạn đang tìm kiếm</h2>
+    <p class="sub">Khám phá các cổng thông tin khác trong hệ sinh thái Tết Pro Software.</p>
+    <div class="here" id="here" hidden>
+      <span class="ico" id="hereIco"></span>
+      <span>Bạn đang ở đây: <span id="hereName"></span></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Tết Pro Software</h4>
+        <p style="margin:0 0 .5rem;color:var(--text2)">Giải pháp chuyển đổi số toàn diện!</p>
+        <a href="mailto:lien-he@tetprosoftware.com" style="color:var(--primary)">lien-he@tetprosoftware.com</a>
+      </div>
+      <div><h4>Hệ sinh thái</h4><ul id="fEco"></ul></div>
+      <div><h4>Mạng xã hội</h4><ul id="fSoc"></ul></div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> Tết Pro Software. Bảo lưu mọi quyền.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ===== 1. Dữ liệu hệ sinh thái (nguồn duy nhất) ===== */
+var SITES=[
+ {host:'tetprosoftware.com',url:'https://www.tetprosoftware.com',name:'Tết Pro Software',desc:'Doanh nghiệp tại Việt Nam',icon:'home',kw:['viet nam','doanh nghiep','trang chu','cong ty']},
+ {host:'tetprosoftware.net',url:'https://www.tetprosoftware.net',name:'Tết Pro Global',desc:'Kết nối quốc tế',icon:'globe',kw:['quoc te','international','global','da ngon ngu','english']},
+ {host:'tetprosoftware.org',url:'https://www.tetprosoftware.org',name:'Tết Pro Organization',desc:'Hồ sơ tổ chức',icon:'org',kw:['to chuc','dinh huong','thong tin','organization']},
+ {host:'tetprosoftware.online',url:'https://www.tetprosoftware.online',name:'Tết Pro Status',desc:'Trạng thái dịch vụ',icon:'pulse',kw:['trang thai','status','uptime','tinh trang','dich vu hoat dong']},
+ {host:'tetprosoftware.me',url:'https://www.tetprosoftware.me',name:'Tết Pro Profile',desc:'Hồ sơ và liên hệ',icon:'user',kw:['lien he','ho so','danh ba','ban do','contact','profile']},
+ {host:'tetprosoftware.store',url:'https://www.tetprosoftware.store',name:'Tết Pro Store',desc:'Dịch vụ và bảng giá',icon:'store',kw:['dich vu','bang gia','gia','giai phap','mua','price','pricing']},
+ {host:'tetprosoftware.tech',url:'https://www.tetprosoftware.tech',name:'Tết Pro Tech',desc:'Công nghệ và kỹ thuật',icon:'code',kw:['cong nghe','ky thuat','devops','ai','chuyen sau','tech']},
+ {host:'tetprosoftware.app',url:'https://www.tetprosoftware.app',name:'Tết Pro Apps',desc:'Ứng dụng và cài đặt',icon:'app',kw:['ung dung','app','cai dat','huong dan','download']},
+ {host:'tetprosoftware.xyz',url:'https://www.tetprosoftware.xyz',name:'Tết Pro Story',desc:'Câu chuyện thương hiệu',icon:'story',kw:['cau chuyen','thuong hieu','hanh trinh','story','brand']},
+ {host:'tetprosoftware.site',url:'https://www.tetprosoftware.site',name:'Tết Pro Products',desc:'Sản phẩm phần mềm',icon:'box',kw:['san pham','phan mem','danh muc','product','software']}
+];
+var SOCIAL=[
+ ['Facebook','https://www.facebook.com/tetprosoftware'],['Instagram','https://www.instagram.com/tetprosoftware'],
+ ['Threads','https://www.threads.com/@tetprosoftware'],['TikTok','https://www.tiktok.com/@tetprosoftware'],
+ ['YouTube','https://www.youtube.com/@tetprosoftware'],['GitHub','https://github.com/tetprosoftware'],
+ ['Pinterest','https://www.pinterest.com/tetprosoftware'],['LinkedIn','https://www.linkedin.com/company/tetprosoftware']
+];
+/* Icon SVG nội tuyến (path đơn giản, trang trí) */
+var ICONS={
+ home:'<path d="M3 11l9-8 9 8M5 10v10h14V10"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+ org:'<path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6"/>',pulse:'<path d="M3 12h4l3-7 4 14 3-7h4"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/>',store:'<path d="M4 9l2-5h12l2 5M4 9v11h16V9M4 9c0 3 4 3 4 0 0 3 8 3 8 0 0 3 4 3 4 0"/>',
+ code:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',app:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
+ story:'<path d="M4 5a2 2 0 012-2h13v17H6a2 2 0 00-2 2zM8 7h7"/>',box:'<path d="M12 3l8 4v10l-8 4-8-4V7zM4 7l8 4 8-4M12 11v10"/>'
+};
+var NS='http://www.w3.org/2000/svg';
+function svgIcon(name,cls){
+  var s=document.createElementNS(NS,'svg');
+  s.setAttribute('viewBox','0 0 24 24');s.setAttribute('fill','none');s.setAttribute('stroke','currentColor');
+  s.setAttribute('stroke-width','2');s.setAttribute('stroke-linecap','round');s.setAttribute('stroke-linejoin','round');
+  s.setAttribute('aria-hidden','true');if(cls)s.setAttribute('class',cls);
+  /* Chuỗi path lấy từ hằng số nội bộ, không phải dữ liệu người dùng */
+  s.innerHTML=name==='arrow'?'<path d="M7 17L17 7M8 7h9v9"/>':ICONS[name];
+  return s;
+}
+
+/* ===== 2. Nhận diện hostname ===== */
+function normHost(h){return String(h||'').toLowerCase().replace(/^www\./,'').replace(/\.$/,'');}
+var host=normHost(location.hostname);
+var current=null;
+SITES.forEach(function(s){if(s.host===host)current=s;});
+
+/* ===== 3. Liên kết trang chủ =====
+   BASE_PATH: đặt '' khi dùng domain tùy chỉnh hoặc user/org site.
+   Với GitHub Pages dạng project (https://user.github.io/ten-repo/), đặt BASE_PATH = '/ten-repo'.
+   Không đoán tự động vì 404.html có thể được phục vụ ở bất kỳ độ sâu đường dẫn nào.
+   Lưu ý: GitHub Pages hiển thị 404.html nhưng vẫn trả HTTP 404; đây là hành vi bình thường. */
+var BASE_PATH='';
+var homeUrl=location.origin+BASE_PATH+'/';
+if(location.protocol==='file:')homeUrl='./'; /* mở trực tiếp để xem thử */
+Array.prototype.forEach.call(document.querySelectorAll('.js-home,#logoLink'),function(a){a.setAttribute('href',homeUrl);});
+
+/* ===== 4. Render card và footer ===== */
+var grid=document.getElementById('grid');
+var list=SITES.filter(function(s){return s!==current;});
+list.forEach(function(s){
+  var a=document.createElement('a');a.className='card';a.href=s.url;
+  var top=document.createElement('div');top.className='top';
+  var ic=document.createElement('span');ic.className='ico';ic.appendChild(svgIcon(s.icon));
+  top.appendChild(ic);top.appendChild(svgIcon('arrow','arrow'));
+  var h=document.createElement('h3');h.textContent=s.name;
+  var d=document.createElement('span');d.className='dom';d.textContent=s.url.replace('https://','');
+  var p=document.createElement('p');p.textContent=s.desc;
+  a.appendChild(top);a.appendChild(h);a.appendChild(d);a.appendChild(p);
+  grid.appendChild(a);
+});
+if(current){
+  document.getElementById('here').hidden=false;
+  document.getElementById('hereName').textContent=current.name+' ('+current.host+')';
+  document.getElementById('hereIco').appendChild(svgIcon(current.icon));
+}
+function fill(id,items){
+  var ul=document.getElementById(id);
+  items.forEach(function(it){
+    var li=document.createElement('li'),a=document.createElement('a');
+    a.href=it[1];a.textContent=it[0];li.appendChild(a);ul.appendChild(li);
+  });
+}
+fill('fEco',SITES.map(function(s){return [s.name+' — '+s.host,s.url];}));
+fill('fSoc',SOCIAL);
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ===== 5. Tìm kiếm cục bộ (không gửi dữ liệu đi đâu) ===== */
+function fold(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/[^a-z0-9 .]/g,' ').replace(/\s+/g,' ').trim();}
+var form=document.getElementById('searchForm'),input=document.getElementById('q'),
+    msg=document.getElementById('msg'),res=document.getElementById('results');
+function search(raw){
+  var q=fold(raw);
+  if(!q)return null;
+  return SITES.filter(function(s){
+    var hay=fold(s.name+' '+s.desc+' '+s.host);
+    if(hay.indexOf(q)>-1)return true;
+    return s.kw.some(function(k){return k===q||(q.length>=3&&(k.indexOf(q)>-1||q.indexOf(k)>-1))||(k.length<=3&&(' '+q+' ').indexOf(' '+k+' ')>-1);});
+  });
+}
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  res.textContent='';
+  var found=search(input.value);
+  if(found===null){msg.textContent='Vui lòng nhập từ khóa, ví dụ: dịch vụ, ứng dụng, công nghệ.';input.focus();return;}
+  if(!found.length){
+    msg.textContent='Chưa tìm thấy trang phù hợp. Hãy thử từ khóa khác, về trang chủ hoặc gửi email tới lien-he@tetprosoftware.com.';
+    return;
+  }
+  msg.textContent='Tìm thấy '+found.length+' trang phù hợp:';
+  found.forEach(function(s){
+    var li=document.createElement('li'),a=document.createElement('a'),n=document.createElement('span'),m=document.createElement('small');
+    a.href=s.url;n.textContent=s.name;m.textContent=s.desc;a.appendChild(n);a.appendChild(m);li.appendChild(a);res.appendChild(li);
+  });
+});
+
+/* ===== 6. Quay lại và kiểm tra URL ===== */
+document.getElementById('backBtn').addEventListener('click',function(){
+  try{
+    var sameSite=document.referrer&&new URL(document.referrer).origin===location.origin;
+    if(history.length>1&&(sameSite||document.referrer)){history.back();return;}
+  }catch(e){}
+  location.href=homeUrl; /* phương án dự phòng */
+});
+var urlBtn=document.getElementById('urlBtn'),urlBox=document.getElementById('urlbox');
+document.getElementById('urlText').textContent=location.href;
+urlBtn.addEventListener('click',function(){
+  var open=urlBox.hidden;urlBox.hidden=!open;urlBtn.setAttribute('aria-expanded',String(open));
+});
+
+/* ===== 7. Theme sáng/tối ===== */
+var root=document.documentElement;
+function isDark(){
+  var t=root.getAttribute('data-theme');
+  if(t)return t==='dark';
+  return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
+}
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var next=isDark()?'light':'dark';
+  root.setAttribute('data-theme',next);
+  try{localStorage.setItem('tps-theme',next);}catch(e){} /* bị chặn thì vẫn hoạt động */
+});
+
+/* ===== 8. Menu mobile ===== */
+var menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',function(){
+  var o=nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',String(o));
+  menuBtn.setAttribute('aria-label',o?'Đóng menu':'Mở menu');
+});
+})();
+</script>
+<noscript><p class="wrap" style="padding-block:1rem">Trang bạn tìm không tồn tại. <a href="/">Về trang chủ</a> hoặc liên hệ <a href="mailto:lien-he@tetprosoftware.com">lien-he@tetprosoftware.com</a>.</p></noscript>
+</body>
+</html>
